@@ -32,19 +32,18 @@
           <input type="text" id="description" class="form-control" placeholder="Work Performed...">
         </div>
 
-        <div class="form-group">
-          <label for="customer">Customer</label>
-          <input type="text" id="customer" class="form-control" placeholder="Customer Name...">
-        </div>
+        <div class="row">
+          
+          <div class="form-group col">
+            <label for="timeIn">Time In</label>
+            <input type="datetime-local" id="timeIn" class="form-control" value="2019-01-01T12:00" step="900">
+          </div>
 
-        <div class="form-group">
-          <label for="timeIn">Time In</label>
-          <input type="time" id="timeIn" class="form-control">
-        </div>
+          <div class="form-group col">
+            <label for="timeOut">Time Out</label>
+            <input type="datetime-local" id="timeOut" class="form-control" value="2019-01-01T12:00" step="900">
+          </div>
 
-        <div class="form-group">
-          <label for="timeOut">Time Out</label>
-          <input type="time" id="timeOut" class="form-control">
         </div>
 
         <button class="btn btn-outline-info btn-block btn-lg">Add Job</button>
@@ -59,9 +58,10 @@
             
             <th>Customer</th>
             <th>Job Description</th>
+            <th>Date</th>
             <th>Time In</th>
             <th>Time Out</th>
-            <th>Total Hours</th>
+            <th></th>
 
           </tr>
 
@@ -74,6 +74,7 @@
     </div>
 
     <script src="/script.js"></script>
+    <script src="/js/libs/moment.min.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
