@@ -137,31 +137,15 @@ document.getElementById('job-form').addEventListener('submit', (event) => {
 })
 
 // Event: Remove a Job
-const jobList = document.getElementById('job-list').addEventListener('click', (event) => {
+document.getElementById('job-list').addEventListener('click', (event) => {
   UI.deleteJob(event.target)
 
   // Remove Job from UI
   UI.deleteJob(event.target)
 
   // RemoveJob from Store
-  Store.removeJob(event.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent)
+  Store.removeJob(event.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.textContent)
 
   // Show success message
   UI.showAlert('Job Removed', 'success')
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
