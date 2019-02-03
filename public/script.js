@@ -28,10 +28,10 @@ class UI {
     row.innerHTML = `
       <td>${job.customer}</td>
       <td>${job.description}</td>
-      <td>${formattedDate}</td>
-      <td>${formattedTimeIn}</td>
-      <td>${formattedTimeOut}</td>
-      <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+      <td class="text-center">${formattedDate}</td>
+      <td class="text-center">${formattedTimeIn}</td>
+      <td class="text-center">${formattedTimeOut}</td>
+      <td><a href="#" id="delete-button" class="btn btn-danger btn-sm delete">X</a></td>
     `
 
     list.appendChild(row)
@@ -65,8 +65,6 @@ class UI {
   static clearFields() {
     document.getElementById('customer').value = ''
     document.getElementById('description').value = ''
-    document.getElementById('timeIn').value = ''
-    document.getElementById('timeOut').value = ''
   }
 }
 
@@ -139,14 +137,14 @@ document.getElementById('job-form').addEventListener('submit', (event) => {
 })
 
 // Event: Remove a Job
-document.getElementById('job-list').addEventListener('click', (event) => {
+const jobList = document.getElementById('job-list').addEventListener('click', (event) => {
   UI.deleteJob(event.target)
 
   // Remove Job from UI
   UI.deleteJob(event.target)
 
   // RemoveJob from Store
-  Store.removeJob(event.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.textContent)
+  Store.removeJob(event.target.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent)
 
   // Show success message
   UI.showAlert('Job Removed', 'success')
