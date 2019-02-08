@@ -25,9 +25,15 @@ class UI {
   static addJobToList(job) {
     const list = document.getElementById('job-list')
     const row = document.createElement('tr')
+    const data = document.createElement('td')
     const formattedDate = moment(job.timeIn).format('MMM Do')
     const formattedTimeIn = moment(job.timeIn).format('h:mm a')
     const formattedTimeOut = moment(job.timeOut).format('h:mm a')
+
+    // Setup the Delete Job Button
+    const button = document.createElement('button')
+    button.textContent = 'x'
+    button.classList.add('btn', 'btn-danger', 'btn-sm', 'float-right')
 
     row.innerHTML = `
       <td>${job.customer}</td>
@@ -35,9 +41,10 @@ class UI {
       <td class="text-center">${formattedDate}</td>
       <td class="text-center">${formattedTimeIn}</td>
       <td class="text-center">${formattedTimeOut}</td>
-      <td><a href="#" id="delete-button" class="btn btn-danger btn-sm delete">X</a></td>
     `
 
+    data.appendChild(button)
+    row.appendChild(data)
     list.appendChild(row)
   }
 
@@ -79,15 +86,11 @@ UI.clearFields()
 
 // Store Class: Handle Storage
 class Store {
+
   static getJobs() {
     let jobs
-    if (localStorage.getItem('jobs') === null) {
-      jobs = []
-    } else {
-      jobs = JSON.parse(localStorage.getItem('jobs'))
-    }
-
-    return jobs
+    const jobsJSON = localStorage.getItem('jobs')
+    return jobsJSON ? jobs = JSON.parse(jobsJSON) : jobs = []
   }
 
   static addJob(job) {
