@@ -1,3 +1,6 @@
+// Default Time Stamp
+const timestamp = moment().valueOf()
+
 // Job Class: Represents a Job
 class Job {
   constructor(customer, description, timeIn, timeOut) {
@@ -65,8 +68,13 @@ class UI {
   static clearFields() {
     document.getElementById('customer').value = ''
     document.getElementById('description').value = ''
+    document.getElementById('timeIn').value = moment(timestamp).format('YYYY-MM-DDTHH:ss')
+    document.getElementById('timeOut').value = moment(timestamp).format('YYYY-MM-DDTHH:ss')
   }
 }
+
+// Set Default Field Values on Page Load
+UI.clearFields()
 
 // Store Class: Handle Storage
 class Store {
