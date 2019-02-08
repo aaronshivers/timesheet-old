@@ -3,7 +3,7 @@ const timestamp = moment().valueOf()
 
 // Job Class: Represents a Job
 class Job {
-  constructor(customer, description, timeIn, timeOut, id = uuidv4()) {
+  constructor(customer, description, timeIn, timeOut, id) {
     this.customer = customer
     this.description = description
     this.timeIn = timeIn
@@ -129,7 +129,7 @@ document.getElementById('job-form').addEventListener('submit', (event) => {
     UI.showAlert('Please complete all fields.', 'danger')
   } else {
     // Instantiate job
-    const job = new Job(customer, description, timeIn, timeOut)
+    const job = new Job(customer, description, timeIn, timeOut, id = uuidv4())
 
     // Add Job to UI
     UI.addJobToList(job)
