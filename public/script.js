@@ -3,11 +3,12 @@ const timestamp = moment().valueOf()
 
 // Job Class: Represents a Job
 class Job {
-  constructor(customer, description, timeIn, timeOut) {
+  constructor(customer, description, timeIn, timeOut, id = uuidv4()) {
     this.customer = customer
     this.description = description
     this.timeIn = timeIn
     this.timeOut = timeOut
+    this.id = id
   }
 }
 
@@ -68,8 +69,8 @@ class UI {
   static clearFields() {
     document.getElementById('customer').value = ''
     document.getElementById('description').value = ''
-    document.getElementById('timeIn').value = moment(timestamp).format('YYYY-MM-DDTHH:ss')
-    document.getElementById('timeOut').value = moment(timestamp).format('YYYY-MM-DDTHH:ss')
+    document.getElementById('timeIn').value = moment(timestamp).format('YYYY-MM-DDTHH:mm')
+    document.getElementById('timeOut').value = moment(timestamp).format('YYYY-MM-DDTHH:mm')
   }
 }
 
