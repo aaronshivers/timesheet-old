@@ -1,0 +1,12 @@
+{
+  "short_name": "Timesheet",
+  "name": "Timesheet",
+  "icons": [{
+    "src": "/img/clock-regular.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  }],
+  "background_color": "#008cba",
+  "display": "standalone",
+  "theme_color": "#008cba"
+}
