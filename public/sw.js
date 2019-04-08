@@ -11,7 +11,7 @@ self.addEventListener('install', async event => {
         `/`,
         `/css/bootstrap.min.css`,
         `https://use.fontawesome.com/releases/v5.8.1/css/all.css`,
-        `/script.js`,
+        `/js/script.js`,
         `/js/libs/uuidv4.jss`,
         `/js/libs/moment.min.js`,
         `https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700`,
