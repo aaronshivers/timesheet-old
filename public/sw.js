@@ -9,10 +9,11 @@ self.addEventListener('install', async event => {
       console.log(`[Service Worker] Pre-Caching App Shell`)
       cache.addAll([
         `/`,
+        `/index.html`,
         `/css/bootstrap.min.css`,
         `https://use.fontawesome.com/releases/v5.8.1/css/all.css`,
         `/js/script.js`,
-        `/js/libs/uuidv4.jss`,
+        `/js/libs/uuidv4.js`,
         `/js/libs/moment.min.js`,
         `https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700`,
       ])
