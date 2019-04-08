@@ -1,11 +1,9 @@
-// Default Time Stamp
-const timestamp = moment().valueOf()
-
 // Job Class: Represents a Job
 class Job {
-  constructor(customer, description, timeIn, timeOut, id) {
+  constructor(customer, description, date, timeIn, timeOut, id) {
     this.customer = customer
     this.description = description
+    this.date = date
     this.timeIn = timeIn
     this.timeOut = timeOut
     this.id = id
@@ -26,14 +24,14 @@ class UI {
     const list = document.getElementById('job-list')
     const row = document.createElement('tr')
     const data = document.createElement('td')
-    const formattedDate = moment(job.timeIn).format('MMM Do')
-    const formattedTimeIn = moment(job.timeIn).format('h:mm a')
-    const formattedTimeOut = moment(job.timeOut).format('h:mm a')
+    const formattedDate = moment(job.date).format('MMM Do')
+    const formattedTimeIn = moment(`T${ job.timeIn }`).format('h:mm a')
+    const formattedTimeOut = moment(`T${job.timeOut}`).format('h:mm a')
 
     // Setup the Delete Job Button
     const button = document.createElement('button')
     button.textContent = 'x'
-    button.classList.add('btn', 'btn-danger', 'btn-sm', 'float-right')
+    button.classList.add('btn', 'btn-danger', 'btn-sm', 'float-right', 'delete')
 
     row.innerHTML = `
       <td>${job.customer}</td>
@@ -76,8 +74,9 @@ class UI {
   static clearFields() {
     document.getElementById('customer').value = ''
     document.getElementById('description').value = ''
-    document.getElementById('timeIn').value = moment(timestamp).format('YYYY-MM-DDTHH:mm')
-    document.getElementById('timeOut').value = moment(timestamp).format('YYYY-MM-DDTHH:mm')
+    document.getElementById('date').value = moment().format('YYYY-MM-DD')
+    document.getElementById('timeIn').value = moment().format('HH:mm')
+    document.getElementById('timeOut').value = moment().format('HH:mm')
   }
 }
 
@@ -124,6 +123,7 @@ document.getElementById('job-form').addEventListener('submit', (event) => {
   // Get form values
   const customer = document.getElementById('customer').value
   const description = document.getElementById('description').value
+  const date = document.getElementById('date').value
   const timeIn = document.getElementById('timeIn').value
   const timeOut = document.getElementById('timeOut').value
 
@@ -132,7 +132,7 @@ document.getElementById('job-form').addEventListener('submit', (event) => {
     UI.showAlert('Please complete all fields.', 'danger')
   } else {
     // Instantiate job
-    const job = new Job(customer, description, timeIn, timeOut, id = uuidv4())
+    const job = new Job(customer, description, date, timeIn, timeOut, id = uuidv4())
 
     // Add Job to UI
     UI.addJobToList(job)

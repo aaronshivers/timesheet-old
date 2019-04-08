@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<<<<<<< HEAD
     <!-- PWA Stuff -->
     <meta name="theme-color" content="#31b0d5"/>
     <link rel="manifest" href="/manifest.json">
@@ -12,6 +13,13 @@
     <!-- favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+=======
+    <meta name="Description" content="A timesheet application.">
+
+    <meta name="theme-color" content="#008cba"/>
+
+    <link rel="manifest" href="/manifest.json">
+>>>>>>> e2eba530f332e79f1d8066c45762ad99719602aa
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -25,7 +33,7 @@
     <div class="container mt-4">
 
       <h1 class="text-center display-4">
-        <i class="far fa-clock text-info"></i> Timesheet
+        <i class="far fa-clock text-primary"></i> Timesheet
       </h1>
 
       <form id="job-form" class="form">
@@ -42,25 +50,30 @@
 
         <div class="row">
           
-          <div class="form-group col">
-            <label for="timeIn">Time In</label>
-            <input type="datetime-local" id="timeIn" class="form-control">
+          <div class="form-group col-lg-4 col-sm-12 col-xs-12">
+            <label for="date">Date</label>
+            <input type="date" id="date" class="form-control">
           </div>
 
-          <div class="form-group col">
+          <div class="form-group col-lg-4 col-sm-6 col-xs-12">
+            <label for="timeIn">Time In</label>
+            <input type="time" id="timeIn" class="form-control">
+          </div>
+
+          <div class="form-group col-lg-4 col-sm-6 col-xs-12">
             <label for="timeOut">Time Out</label>
-            <input type="datetime-local" id="timeOut" class="form-control">
+            <input type="time" id="timeOut" class="form-control">
           </div>
 
         </div>
 
-        <button class="btn btn-info btn-block btn-lg">Add Job</button>
+        <button class="btn btn-primary btn-block btn-lg">Add Job</button>
 
       </form>
 
       <table class="table table-striped mt-5">
         
-        <thead class="table-secondary">
+        <thead class="table-primary">
           
           <tr>
             
@@ -85,10 +98,5 @@
     <script src="/js/libs/uuidv4.js"></script>
     <script src="/script.js"></script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<!--     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
   </body>
 </html>
