@@ -1,3 +1,12 @@
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+  navigator
+    .serviceWorker
+    .register('/sw.js')
+    .then(() => console.log(`Service Worker Registered!`))
+    .catch(err => console.log(err.message))
+}
+
 // Job Class: Represents a Job
 class Job {
   constructor(customer, description, date, timeIn, timeOut, id) {
