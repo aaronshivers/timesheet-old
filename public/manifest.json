@@ -15,9 +15,8 @@
   "start_url": "/index.html",
   "scope": ".",
   "display": "standalone",
-  "orientation": "landscape",  
-  "background_color": "#31b0d5",
-  "theme_color": "#31b0d5",
+  "background_color": "#008cba",
+  "theme_color": "#008cba",
   "description": "An application for tracking time.",
   "lang": "en-US"
 }
