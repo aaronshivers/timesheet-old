@@ -13,8 +13,8 @@ class Job {
     this.customer = customer
     this.description = description
     this.date = date
-    this.timeIn = timeIn
-    this.timeOut = timeOut
+    this.timeIn = `2019-01-01T${ timeIn }`
+    this.timeOut = `2019-01-01T${ timeOut }`
     this.id = id
   }
 }
