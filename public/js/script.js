@@ -34,8 +34,8 @@ class UI {
     const row = document.createElement('tr')
     const data = document.createElement('td')
     const formattedDate = moment(job.date).format('MMM Do')
-    const formattedTimeIn = moment(`T${ job.timeIn }`).format('h:mm a')
-    const formattedTimeOut = moment(`T${job.timeOut}`).format('h:mm a')
+    const formattedTimeIn = moment(job.timeIn).format('h:mm a')
+    const formattedTimeOut = moment(job.timeOut).format('h:mm a')
 
     // Setup the Delete Job Button
     const button = document.createElement('button')
